@@ -1,0 +1,23 @@
+\documentclass{40k}
+
+\usepackage{pdflscape}
+
+%%-- For cards
+\pgfmathsetmacro{\cardroundingradius}{2mm}
+\pgfmathsetmacro{\striproundingradius}{1mm}
+\pgfmathsetmacro{\ruleheight}{0.1}
+\pgfmathsetmacro{\stripheight}{1.1}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.3}
+\newcommand{\stripcolor}{black}
+%%-------
+
+\input{legacycard}
+\input{searchcard}
+\input{covertcard}
+
+\begin{document}
+
+\input{twilight-legacies}
+
+\end{document}

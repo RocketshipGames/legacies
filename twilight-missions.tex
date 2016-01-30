@@ -1,0 +1,69 @@
+
+\newlength{\missionheight}
+\setlength{\missionheight}{(\textheight-18pt)/2}
+\newcommand{\miwrap}[1]{\noindent\vbox to \missionheight{\input{missions/#1}\vfill\vbox to 0pt{}}}
+
+\newcommand{\mispace}{%
+\vfill
+%\hrule
+%\vspace*{3pt}
+%\hrule
+%\vfill
+}
+
+\newcommand{\mipre}{%
+\clearpage
+}
+
+\newcommand{\mipost}{%
+}
+
+\newcommand{\mipair}[2]{%
+\mipre%
+\miwrap{#1}%
+\mispace%
+\miwrap{#2}%
+\mipost
+}
+
+\newcommand{\scoringbox}[5]{%
+\vfill%
+\vspace{9pt}%
+\noindent\vbox{%
+\noindent\vbox to -4pt{\noindent\hfill\Large\bf\sc\fontfamily{ptm}\selectfont Scoring\vbox{}}\\
+%
+{\fbox{\vbox{\small%
+\setlength{\tabcolsep}{2pt}%
+\noindent\begin{tabularx}{\linewidth}{cccX}
+  \hbox to 1.25em{\rotatebox{45}{\small\bf Attacker}}&
+  \hbox to 1.25em{\rotatebox{45}{\small\bf Defender}}&
+  &
+  \multicolumn{1}{c}{\footnotesize\bf Condition}
+\\
+  \hline
+%
+  \rescheck&\rescheck& & {\bf Major Victory:} #1\\
+%
+  \rescheck&\rescheck& &
+  {\bf Minor Victory:} #2\\
+%
+\rescheck&\rescheck& &
+{\bf Draw:} #3\\
+\hline \rescheck&\rescheck& &
+{\bf Bonus Point:} #4\\
+\rescheck&\rescheck& &
+{\bf Bonus Point:} #5\\
+\end{tabularx}%
+}}}}%
+}
+
+\clearpage
+\squelchbackground
+
+\mipair{ambush}{assassination}
+\mipair{battlefield}{breakthrough}
+\mipair{encirclement}{excavation}
+\mipair{installation}{skirmish}%
+
+\clearpage
+\restorebackground

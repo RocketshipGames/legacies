@@ -1,0 +1,117 @@
+\newcommand{\legacytitle}{CAMPAIGN LEGACY}
+\newcommand{\legacystory}{Your must accomplish your quest!}
+\newcommand{\legacymissiona}{Any}%
+\newcommand{\legacyrolea}{Either}%
+\newcommand{\legacymissionb}{Any}%
+\newcommand{\legacyroleb}{Either}%
+\newcommand{\legacymissionc}{Any}%
+\newcommand{\legacyrolec}{Either}%
+\newcommand{\legacygoal}{CRUSH FACE.}%
+\newcommand{\legacybonus}{Hit yourself.}%
+
+\pgfmathsetmacro{\legacycardwidth}{9.25}
+\pgfmathsetmacro{\legacycardheight}{12.45}
+
+\newcommand{\legacystripfontsize}{\huge}
+\newcommand{\legacycaptionfontsize}{\LARGE}
+\newcommand{\legacytextfontsize}{\large}
+
+\newcommand{\legacystriptext}%
+  {LEGACY: \legacytitle\hspace{0.5em}\rotatebox[origin=c]{-90}{\includegraphics[width=0.6cm]{icon-skull}}}
+
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\newcommand{\resultstable}{%
+\noindent\begin{minipage}{\linewidth}%
+%\smallskip\centering\legacytextfontsize%
+{\bf Twilight Missions:}\\
+\centerline{\begin{tabular}{@{}C{1.3in}C{1in}c@{}}
+  %{\bf Mission} & {\bf Role}&\\% & {\bf Victory}\\
+  %\hline
+  \legacymissiona & \legacyrolea & \ding{111}\\
+  \legacymissionb & \legacyroleb & \ding{111}\\
+  \legacymissionc & \legacyrolec & \ding{111}\\
+  %\underline{\hspace{1.25in}} &  \underline{\hspace{0.8in}} & \ding{111}\\
+\end{tabular}}%
+\end{minipage}%
+}
+
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\newcommand{\drawlegacycard}{%
+\begin{tikzpicture}%
+  \clip (-0.05, -0.05) rectangle (\legacycardwidth+.05, \legacycardheight+.05);
+
+  %%-- Draw the card back and outline
+  \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
+    rectangle (\legacycardwidth,\legacycardheight);
+  \node[above left] at (\legacycardwidth+0.1, -0.1)
+    {\includegraphics[width=3.5in]{background-skull}};
+  \draw[rounded corners=\cardroundingradius] (0,0) rectangle
+    (\legacycardwidth,\legacycardheight);
+
+  %%-- Draw the side strip
+  \fill[\stripcolor,rounded corners=\striproundingradius]
+    (\strippadding,\strippadding) rectangle
+    (\strippadding+\stripwidth,\legacycardheight-\strippadding)
+    node[rotate=90,above left,white,font=\legacystripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[15pt][3pt]{\vbox to -18pt{}} \legacystriptext};
+
+  %%-- Draw the player info lines
+    \node[text width=(\legacycardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
+          below right,inner sep=0] at
+          (\strippadding+\stripwidth+\textpadding,\legacycardheight-\textpadding)
+    {\legacytextfontsize%
+      \raisebox{0pt}[26pt][0pt]{\begin{minipage}[b]{1.0\linewidth}\centering\it
+          \legacystory
+      \end{minipage}}
+
+      %\bigskip
+      %\centerline{\Large\sc\fontfamily{ptm}\selectfont --- Campaign ---}
+
+      \bigskip
+      \centerline{\resultstable}
+
+      %\bigskip
+      %\centerline{\Large\sc\fontfamily{ptm}\selectfont --- Cataclysm ---}
+
+      \bigskip
+      {\bf Cataclysm Objective:} \legacygoal
+
+      \bigskip
+      {\bf Legacy Bonus:} \legacybonus
+    };
+
+    \node[text width=(\legacycardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
+          above right,inner sep=0] at
+          (\strippadding+\stripwidth+\textpadding,\strippadding)
+    {\legacytextfontsize%
+      \begin{tabular}{@{}ll}
+        \textbf{Name:} &  \underline{\vbox to 18pt{}\hspace{2.125in}}\\
+        %\textbf{Squad:} &  \underline{\vbox to 18pt{}\hspace{8.25cm}}\\
+        %\textbf{Faction:} & \underline{\vbox to 18pt{}\hspace{8.25cm}}\\
+        %\textbf{Alliance:} & \underline{\vbox to 18pt{}\hspace{8.25cm}}\\
+      \end{tabular}
+    };
+\end{tikzpicture}
+}
+
+
+\newcommand{\legacycard}[9]{%
+\renewcommand{\legacytitle}{#1}%
+\renewcommand{\legacystory}{#2}%
+\renewcommand{\legacymissiona}{#3}%
+\renewcommand{\legacyrolea}{#4}%
+\renewcommand{\legacymissionb}{#5}%
+\renewcommand{\legacyroleb}{#6}%
+\renewcommand{\legacymissionc}{#7}%
+\renewcommand{\legacyrolec}{#8}%
+\renewcommand{\legacygoal}{#9}%
+\legacycardb%
+}
+
+\newcommand{\legacycardb}[1]{%
+\renewcommand{\legacybonus}{#1}%
+\drawlegacycard%
+}

@@ -1,0 +1,49 @@
+\documentclass{40k}
+
+\usepackage{pdflscape}
+
+%%-- For cards
+\pgfmathsetmacro{\cardroundingradius}{2mm}
+\pgfmathsetmacro{\striproundingradius}{1mm}
+\pgfmathsetmacro{\ruleheight}{0.1}
+\pgfmathsetmacro{\stripwidth}{1.1}
+\pgfmathsetmacro{\stripheight}{1.1}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.3}
+\newcommand{\stripcolor}{black}
+%%-------
+
+\input{legacycard}
+
+\begin{document}
+
+\includepdf[pages={1}]{art/cover/cover.pdf}
+
+\input{introduction}
+
+\input{overview}
+
+\input{twilight-legacies}
+\input{twilight-missions}
+
+%\input{cataclysm}
+
+\end{document}
+
+\missionheading{Disclaimer}%
+
+Cataclysm is completely unofficial, unauthorized, and unaffiliated
+with Games Workshop.
+
+\smallskip%
+{\small Adepta Sororitas, Adeptus Astartes, Astra Militarum, Blood
+  Angels, Chaos Daemons, Chaos Space Marines, Dark Angels, Dark Eldar,
+  Eldar, Grey Knights, Militarum Tempestus, Necrons, Officio
+  Assassinorum, Space Wolves, Tau Empire, Tyranid, Forge World, Games
+  Workshop, Warhammer, and all associated marks, names, races, race
+  insignia, characters, vehicles, locations, units, illustrations,
+  images, and models from the Warhammer~40,000 universe and game are
+  either \textregistered, TM, and/or \textcopyright\ Copyright Games
+  Workshop Ltd~2000--2014, variably registered in the UK and other
+  countries.  Used without permission, no challenge to status
+  intended, all rights reserved to their respective owners.}
