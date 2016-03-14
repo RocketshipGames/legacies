@@ -1,0 +1,75 @@
+\newcommand{\scorecard}{%
+\begin{minipage}{3.25in}\centering
+\begin{story}{62pt}{Game Results}
+%\vspace*{2pt}
+
+\vspace*{6pt}
+{Attacker:}\raisebox{-4pt}{\hbox to 2.0625in{\enspace\hrulefill}}
+
+\vspace*{8pt}
+{Defender:}\raisebox{-4pt}{\hbox to 2in{\enspace\hrulefill}}
+
+\vspace*{4pt}
+\centering
+\begin{minipage}{\linewidth}
+{\vbox{\small%
+\setlength{\tabcolsep}{2pt}%
+\noindent\begin{tabularx}{\linewidth}{cccX}
+  \raisebox{6pt}{\hbox to 1.25em{\rotatebox{15}{\small\bf Attacker}}}&
+  \hbox to 1.25em{\rotatebox{15}{\small\bf Defender}}&
+  &
+  \multicolumn{1}{c}{\footnotesize\bf Outcome}
+\\
+  \hline
+%
+  \rescheck&\rescheck& & {\bf Major Victory}\\
+%
+  \rescheck&\rescheck& &
+  {\bf Minor Victory}\\
+%
+\rescheck&\rescheck& &
+{\bf Draw}\\
+\hline \rescheck&\rescheck& &
+{\bf Bonus Point}\\
+\rescheck&\rescheck& &
+{\bf Bonus Point}\\
+\end{tabularx}%
+}}%
+\end{minipage}
+
+\vspace*{9pt}
+\vbox to 0pt{}
+
+\end{story}
+\end{minipage}
+}
+
+\clearpage
+\begin{landscape}  
+\noindent
+\scorecard%
+\hfill%
+\scorecard%
+\hfill%
+\scorecard
+
+\vfill
+
+\noindent
+\scorecard%
+\hfill%
+\scorecard%
+\hfill%
+\scorecard
+
+\vfill
+
+\noindent
+\scorecard%
+\hfill%
+\scorecard%
+\hfill%
+\scorecard
+
+\end{landscape}
+\clearpage
