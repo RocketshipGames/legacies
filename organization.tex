@@ -81,13 +81,16 @@ making two sets of legacy cards and one set of mission sheets.
 
 With anything but a very small number of players, it's probably easier
 to have players record results separately from the mission sheets,
-especially as the latter might be used multiple times.  In that case,
-print and cut apart enough copies of the scorecards at the end of this
-section to have one for each match.  Finally, if using the scoring
-mechanism described here, also print and cut apart enough copies of
-the ballots and tickets from the end of this section to have one
-painting ballot per player and as many sportsmanship tickets as you
-think might be necessary.
+especially as the latter might be used again.  In that case, print and
+cut apart enough copies of the scorecards at the end of this section
+to have one for each match.  If using the scoring mechanism described
+here, also print and cut apart enough copies of the ballots and
+tickets to have one painting ballot per player and as many
+sportsmanship tickets as might be necessary. Finally, print out one
+copy of the Cataclysm scoresheet and as many copies of the players
+scoresheet as needed.  A spreadsheet is available on the
+\underline{\href{http://rocketshipgames.com/40k/legacies/}{\emph{Legacies}
+    website}}.
 
 \missionheading{Legacies}
 
@@ -99,10 +102,10 @@ how to divy up the legacies.  If there is any contention, either ask
 the players in random order to choose, or randomly assign legacies.
 
 Each legacy lists three Recon Squad Missions and gives a Cataclysm
-Objective and Legacy Bonus.  To achieve their legacy, players must
-accomplish the Cataclysm Objective in the final team battle.  If they
+objective and legacy bonus.  To achieve their legacy, players must
+accomplish the Cataclysm objective in the final team battle.  If they
 win at least two of the three Recon Squad Missions in the given role
-of attacker, defender, or either, then they receive their Legacy Bonus
+of attacker, defender, or either, then they receive their legacy bonus
 in the Cataclysm.
 
 Players' chosen legacies, match results, and whether or not they are
@@ -148,7 +151,7 @@ Players should use the checkboxes on their legacy cards to record
 victories toward the Recon Squad Mission requirements, in addition to
 the organizer keeping track.  It does not matter if the player was
 nominated or the responding opponent, and they do not have to complete
-the missions in any order.  In order to get their Legacy Bonus in the
+the missions in any order.  In order to get their legacy bonus in the
 Cataclysm they simply have to win each mission in the required role at
 some point in the campaign.  Similarly, a player can attempt a mission
 and role pair multiple times.  However, no advantage is gained by
@@ -195,7 +198,6 @@ organizer should make sure alliances move on to the assault phase with
 time to resolve combats as necessary, even if it means cutting short
 their other actions.
 
-
 \missionsubheading{Teams.}  All players in an alliance select and
 field their own separate army lists following the rules given in the
 Cataclysm mission.  For all gameplay purposes except as specifically
@@ -220,6 +222,8 @@ actions in the current phase.  Alternatively, players without actions
 of their own to complete should help execute actions of their
 teammates, e.g., resolving multiple unrelated ongoing combats in
 parallel.
+%Time \emph{must} be reserved for the assault phase if there
+%are ongoing combats.
 
 \missionsubheading{Scope Limits.}  Special rules that affect all
 units, all enemy units, or the entire table are not applied.  Specific
@@ -243,9 +247,15 @@ Any opposing player with models on the table may attempt to deny the
 witch, caveat that if a specific unit of enemy models is targeted,
 their player alone may attempt to block the spell.
 
+\missionsubheading{Objectives.} If units from multiple players in an
+alliance control an objective marker, then each is considered to
+control it for puposes of meeting the Cataclysm objective for their
+legacy.  They do not all score though, alliance victory points are
+only awarded once.
 
 \vfill
-\centerline{\fbox{\includegraphics[width=\linewidth]{images/swordsofdorn-cropped}}}
+\bigskip
+\centerline{\fbox{\includegraphics[width=\linewidth]{images/biker-sergeant}}}
 \clearpage
 
 \missionheading{Scoring and Prizes}
@@ -302,9 +312,10 @@ Each of the four Recon Squad missions are worth up to~12 points:
 Players may also earn up to~12 points in the Cataclysm toward their
 individual game results:
 \begin{itemize}\shortlist
-\item 7 points for winning their Cataclysm Objective;
-\item 3 points if they earned their Legacy Bonus;
-\item 2 points if their alliance won the Cataclysm.
+\item 7 points for winning their Cataclysm objective;
+\item 3 points if they earned their legacy bonus;
+\item 2 points if their alliance won a tactical victory in the
+  Cataclysm (most victory points earned).
 \end{itemize}
 
 \columnbreak
@@ -371,12 +382,18 @@ themselves, awarding~3,~2, and~1 votes.  The most votes wins.
 %\centerline{\fbox{\includegraphics[width=0.5\linewidth]{images/biker-sergeant}}}
 %\centerline{\fbox{\includegraphics[height=1.75in]{images/bloodangels-cropped}}}
 \centerline{\includegraphics[height=1.5in]{art/skulls}}
-\vfill\vbox to 0pt{}
-\clearpage
+%\vfill\vbox to 0pt{}
 
+\clearpage
 \squelchbackground
 \input{scorecards}
 %\includepdf[pages={1}]{20141220-scorecards.pdf}
 \includepdf[pages={1},landscape=true]{2016-painting.pdf}
 \includepdf[pages={1}]{2016-sportsmanship.pdf}
+
+\input{cataclysm-scoresheet}
+
+\input{player-scoresheet}
+
+\clearpage
 \restorebackground

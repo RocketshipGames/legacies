@@ -3,6 +3,14 @@
 \usepackage{pdflscape}
 \usepackage[pdftex,hidelinks]{hyperref}
 
+\newcommand{\checkbox}{\raisebox{-1pt}{\fbox{\hbox to 1em{\vbox to 1em{}}}}}
+
+\newcommand{\letterbox}{\fbox{\hbox to 2em{\vbox to 32pt{}}}}
+
+\newcommand{\scorebox}{\fbox{\hbox to 32pt{\vbox to 32pt{}}}}
+
+\newcommand{\namebox}[1]{\fbox{\hbox to 92pt{\vbox to 64pt{\vfill\it #1}}}}
+
 %%-- For cards
 \pgfmathsetmacro{\cardroundingradius}{2mm}
 \pgfmathsetmacro{\striproundingradius}{1mm}
@@ -26,6 +34,8 @@
 \input{twilight-legacies}
 \input{missions}
 \input{cataclysm}
+
+\input{credits}
 
 \end{document}
 
