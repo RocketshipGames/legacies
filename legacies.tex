@@ -3,6 +3,8 @@
 \usepackage{pdflscape}
 \usepackage[pdftex,hidelinks]{hyperref}
 
+\usepackage[yyyymmdd]{datetime}
+
 \newcommand{\checkbox}{\raisebox{-1pt}{\fbox{\hbox to 1em{\vbox to 1em{}}}}}
 
 \newcommand{\letterbox}{\fbox{\hbox to 2em{\vbox to 32pt{}}}}
@@ -10,6 +12,63 @@
 \newcommand{\scorebox}{\fbox{\hbox to 32pt{\vbox to 32pt{}}}}
 
 \newcommand{\namebox}[1]{\fbox{\hbox to 92pt{\vbox to 64pt{\vfill\it #1}}}}
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+%%-- Story call-out
+
+% We need to save the node
+% Every append after command might be useful to have this code
+\def\savelastnode{\pgfextra\edef\tmpA{\tikzlastnode}\endpgfextra}
+\def\restorelastnode{\pgfextra\edef\tikzlastnode{\tmpA}\endpgfextra}
+% Define box and box title style
+\tikzstyle{borderbox} = [draw=black, very thick, fill=ltgray!20,
+    rectangle, inner sep=15pt, inner ysep=12pt]
+\tikzstyle{plainbox} = [draw=black, very thick, fill=white,
+    rectangle, inner sep=15pt, inner ysep=12pt]
+% rounded corners, 
+\tikzstyle{fancytitle} =[fill=black, text=white]
+\tikzstyle{club suit} = [append after command={%
+    \savelastnode node[fancytitle,yshift=18pt] at (\tikzlastnode.south east)%
+    {\includegraphics[width=1.5em]{icon-skull.pdf}}\restorelastnode }]
+\tikzstyle{title} = [append after command={%
+    \savelastnode node[fancytitle,right=10pt] at (\tikzlastnode.north west)%
+    {\sc\fontfamily{ptm}\selectfont #1}\restorelastnode}]
+
+\setlength{\fboxsep}{1pt}
+
+\newenvironment{story}[2]{
+\begin{realstory}{#1}{#2}{borderbox}
+}
+{
+\end{realstory}
+}
+
+\newenvironment{realstory}[3]{
+\noindent\hfil%
+\begin{tikzpicture}%
+\node [#3,club suit,title=#2] (box)\bgroup%
+\vbox to #1 \bgroup\hbox to 0.8\linewidth \bgroup%
+\begin{minipage}{0.8\linewidth}\it\fontfamily{ptm}\selectfont%
+\noindent\ignorespaces%
+}{%
+\end{minipage}%
+\egroup\egroup%
+\egroup;%
+\end{tikzpicture}%
+}
+
+\newenvironment{sidestory}[2]
+{
+\bigskip
+\begin{story}{#1}{#2}
+}
+{
+\end{story}
+\smallskip
+}
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
 
 %%-- For cards
 \pgfmathsetmacro{\cardroundingradius}{2mm}
@@ -28,33 +87,18 @@
 
 \includepdf[pages={1}]{art/cover/cover.pdf}
 
+\pagetitle{Legacies}
+
 \input{overview}
 \input{organization}
+
+\pagestyle{empty}
+
 \input{mission-pack}
 \input{twilight-legacies}
+
 \input{missions}
+
 \input{cataclysm}
 
-\input{credits}
-
 \end{document}
-
-\missionheading{Disclaimer}%
-
-Cataclysm is completely unofficial, unauthorized, and unaffiliated
-with Games Workshop.
-
-\smallskip%
-{\small Adepta Sororitas, Adeptus Astartes, Astra Militarum, Blood
-  Angels, Chaos Daemons, Chaos Space Marines, Dark Angels, Dark Eldar,
-  Eldar, Grey Knights, Militarum Tempestus, Necrons, Officio
-  Assassinorum, Space Wolves, Tau Empire, Tyranid, Forge World, Games
-  Workshop, Warhammer, and all associated marks, names, races, race
-  insignia, characters, vehicles, locations, units, illustrations,
-  images, and models from the Warhammer~40,000 universe and game are
-  either \textregistered, TM, and/or \textcopyright\ Copyright Games
-  Workshop Ltd~2000--2014, variably registered in the UK and other
-  countries.  Used without permission, no challenge to status
-  intended, all rights reserved to their respective owners.}
-
-

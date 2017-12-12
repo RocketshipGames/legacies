@@ -1,31 +1,4 @@
 
-\newlength{\missionheight}
-\setlength{\missionheight}{(\textheight-18pt)/2}
-\newcommand{\miwrap}[1]{\noindent\vbox to \missionheight{\input{missions/#1}\vfill\vbox to 0pt{}}}
-
-\newcommand{\mispace}{%
-\vfill
-%\hrule
-%\vspace*{3pt}
-%\hrule
-%\vfill
-}
-
-\newcommand{\mipre}{%
-\clearpage
-}
-
-\newcommand{\mipost}{%
-}
-
-\newcommand{\mipair}[2]{%
-\mipre%
-\miwrap{#1}%
-\mispace%
-\miwrap{#2}%
-\mipost
-}
-
 \newcommand{\scoringbox}[5]{%
 \vfill%
 \vspace{9pt}%
@@ -60,10 +33,14 @@
 \clearpage
 \squelchbackground
 
-\mipair{ambush}{assassination}
-\mipair{battlefield}{breakthrough}
-\mipair{encirclement}{excavation}
-\mipair{installation}{skirmish}%
+\input{missions/ambush}
+\input{missions/assassination}
+\input{missions/battlefield}
+\input{missions/breakthrough}
+\input{missions/encirclement}
+\input{missions/excavation}
+\input{missions/installation}
+\input{missions/skirmish}%
 
 \clearpage
 \restorebackground
